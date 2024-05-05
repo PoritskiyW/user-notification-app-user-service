@@ -12,11 +12,13 @@ export class UsersService {
     private readonly usersRepository: Repository<User>,
     @Inject('BROKER')
     private readonly broker: ClientProxy,
-    private readonly logger: Logger
+    private readonly logger: Logger,
   ) {}
 
   async create(user: Partial<User>) {
-    const createdUser = await this.usersRepository.save(new User(user));
+    const createdUser = await this.usersRepository.save(
+      new User(user),
+    );
     this.logger.log('User created', JSON.stringify(user));
     this.broker.emit('user_created', createdUser);
     return createdUser;
