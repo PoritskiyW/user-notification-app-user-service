@@ -33,3 +33,17 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 ```
+# ENV
+
+For local development ".env" file is needed to be located in the root directory
+
+Example file 
+```md
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_USERNAME=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DATABASE=postgres
+REDIS_HOST=redis
+REDIS_PORT=6379
+```
